@@ -1,0 +1,38 @@
+version: "3.6"
+
+services:
+    # Handles traffic and redirects requests to the proper container with SSL encryption
+    reverse_proxy:
+        image: nginx:1.17.10
+        container_name: reverse_proxy
+        depends_on:
+            - python
+        volumes:
+            - ./reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
+            - ./reverse_proxy/certs:/etc/nginx/certs
+        ports:
+            - "80:80"
+            - "443:443"
+        expose:
+            - "80"
+            - "443"
+        networks:
+            - app-network
+
+    # Container that runs the Python FLASK library
+    python:
+        container_name: python
+        build: ./python/.
+        restart: always
+        volumes:
+            - ./python/:/code
+        ports:
+            - "5000:5000"
+        # expose:
+        #     - "5000"
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge

@@ -1,0 +1,97 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0 auto;
+}
+
+input {
+    border: 1px solid #000000;
+    text-decoration: none;
+    outline: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 250px;
+    font-size: 20px;
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+.page-title {
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.page-title h1 {
+    text-align: center;
+}
+
+.section-title {
+    margin: 1rem 2rem;
+}
+
+.section-title h2 {
+    border-bottom: 1px solid #000000;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: 1rem auto;
+}
+
+.parameter-title {
+    width: 450px;
+    font-size: 25px;
+}
+
+.input-wrap {
+    width: 300px;
+}
+
+select {
+    width: 250px;
+    height: 30px;
+    font-size: 20px;
+}
+
+select option {
+    width: 250px;
+}
+
+.prediction-wrap {
+    width: 300px;
+}
+
+#prediction {
+    opacity: 1;
+    transition: opacity 2s;
+    height: 50px;
+    font-size: 2rem;
+}
+
+.hide {
+    opacity: 0 !important;
+    transition: opacity 2s;
+}
+
+.button-wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.button-wrap button {
+    width: 150px;
+    background: #1C1C1C;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button-wrap button:hover {
+    background: #D3D3D3;
+    color: #000000;
+}

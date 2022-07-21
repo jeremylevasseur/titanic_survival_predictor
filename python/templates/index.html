@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Titanic Survival Predictor</title>
+        <meta name="description" content="Titanic Survival Predictor" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static',filename='styles/main.css') }}"
+        />
+        <script src="{{ url_for('static',filename='scripts/jquery-3.6.0.min.js') }}"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">
+                You are using an <strong>outdated</strong> browser. Please
+                <a href="#">upgrade your browser</a> to improve your experience.
+            </p>
+        <![endif]-->
+
+        <div class="page-title">
+            <h1>Predict Titanic Survivors</h1>
+        </div>
+        <!-- 
+            Inputs:
+                
+            
+            Outputs:
+                
+         -->
+
+        <div class="section-title">
+            <h2>Inputs</h2>
+        </div>
+        <div class="row">
+            <div class="parameter-title">
+                <h5>Ticket Class</h5>
+            </div>
+            <div class="input-wrap">
+                <select name="ticket-class" id="ticket-class-select">
+                    <option value="1">1st Class</option>
+                    <option value="2">2nd Class</option>
+                    <option value="3">3rd Class</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="parameter-title">
+                <h5>Age</h5>
+            </div>
+            <div class="input-wrap">
+                <input id="age-input" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="parameter-title">
+                <h5>Sex</h5>
+            </div>
+            <div class="input-wrap">
+                <select name="sex" id="sex-select">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="parameter-title">
+                <h5># of Siblings/Spouses Aboard Ship</h5>
+            </div>
+            <div class="input-wrap">
+                <input id="sibsp-input" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="parameter-title">
+                <h5># of Parents/Children Aboard Ship</h5>
+            </div>
+            <div class="input-wrap">
+                <input id="parch-input" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="parameter-title">
+                <h5>Fare</h5>
+            </div>
+            <div class="input-wrap">
+                <input id="fare-input" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="parameter-title">
+                <h5>Embarked In</h5>
+            </div>
+            <div class="input-wrap">
+                <select name="embarked" id="embarked-select">
+                    <option value="C">Cherbourg</option>
+                    <option value="Q">Queenstown</option>
+                    <option value="S">Southampton</option>
+                </select>
+            </div>
+        </div>
+        <div class="section-title">
+            <h2>Outputs</h2>
+        </div>
+        <div class="row">
+            <div class="parameter-title">
+                <h5>Survived</h5>
+            </div>
+            <div class="prediction-wrap">
+                <h5 id="prediction"></h5>
+            </div>
+        </div>
+        <div class="button-wrap">
+            <button id="predict-button">Predict</button>
+        </div>
+        <script
+            src="{{ url_for('static',filename='scripts/script.js') }}"
+            async
+            defer
+        ></script>
+    </body>
+</html>
